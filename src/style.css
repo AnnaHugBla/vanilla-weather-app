@@ -1,3 +1,27 @@
+.container {
+  font-family: "Varela Round", sans-serif;
+}
+.weather-app {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+
 h1 {
-  color: black;
+  color: #878787;
+  font-size: 35px;
+  font-weight: 100;
+  line-height: 40px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
 }
