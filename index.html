@@ -20,29 +20,40 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>Barcelona</h1>
-        <ul>
-          <li>Friday 05:00</li>
-          <li>Clear</li>
-          <div class="row">
-            <div class="col-6">12 ºC | ºF</div>
-            <div class="col-6">
-              <ul>
-                <li>Precipitation</li>
-                <li>Humidity</li>
-                <li>Wind</li>
-              </ul>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="overview">
+          <h1>Barcelona</h1>
+          <ul>
+            <li>Friday 05:00</li>
+            <li>Clear</li>
             </div>
-          </div>
-        </ul>
+            <div class="row">
+              <div class="col-6">
+                <div class="weather-temperature">
+                <strong>12</strong><span class="units">ºC | <a href="#" id="fahrenheit">ºF</a>
+                </span>
+                </div>
+                </div>
+              <div class="col-6">
+                <ul>
+                  <li>Precipitation</li>
+                  <li>Humidity</li>
+                  <li>Wind</li>
+                </ul>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <small>
+          <a
+            href="https://optimistic-jackson-b83e58.netlify.app/"
+            target=" blank"
+            >Open-source code</a
+          >
+          by Anna Huguet
+        </small>
       </div>
-      <small>
-        <a href="https://optimistic-jackson-b83e58.netlify.app/" target=" blank"
-          >Open-source code</a
-        >
-        by Anna Huguet
-      </small>
     </div>
     <script src="src/app.js"></script>
   </body>
