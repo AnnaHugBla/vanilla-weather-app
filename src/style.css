@@ -14,6 +14,9 @@ li {
   font-weight: 100;
   line-height: 19px;
 }
+li:first-letter {
+  text-transform: capitalize;
+}
 
 .container {
   font-family: "Varela Round", sans-serif;
@@ -43,7 +46,4 @@ li {
 }
 #fahrenheit {
   text-decoration: none;
-}
-#description {
-  text-transform: capitalize;
 }
