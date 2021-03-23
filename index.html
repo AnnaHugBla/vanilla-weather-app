@@ -25,27 +25,36 @@
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <div class="overview">
-          <h1 id="city"></h1>
-          <ul>
-            <li>Last updated: <span id="date"></span></li>
-            <li id="description"></li>
-            </div>
-            <div class="row">
-              <div class="col-6">
-                <div class="weather-temperature">
-                <strong id="temperature"></strong><span class="units">ºC | <a href="#" id="fahrenheit">ºF</a>
+            <h1 id="city"></h1>
+            <ul>
+              <li>Last updated: <span id="date"></span></li>
+              <li id="description"></li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <span class="clearfix weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="Cloudy"
+                  class="float-left"
+                />
+                <span class="float-left">
+                  <strong id="temperature"></strong
+                  ><span class="units"
+                    >ºC | <a href="#" id="fahrenheit">ºF</a>
+                  </span>
                 </span>
-                </div>
-                </div>
-              <div class="col-6">
-                <ul>
-                  <li>Feels like: <span id="feels-like"></span>ºC</li>
-                  <li>Humidity: <span id="humidity"></span>%</li>
-                  <li>Wind: <span id="wind"></span> km/h</li>
-                </ul>
-              </div>
+              </span>
             </div>
-          </ul>
+            <div class="col-6">
+              <ul>
+                <li>Feels like: <span id="feels-like"></span>ºC</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
+          </div>
         </div>
         <small>
           <a
