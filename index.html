@@ -16,6 +16,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <title>Weather app</title>
   </head>
   <body>
@@ -23,23 +25,23 @@
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <div class="overview">
-          <h1>Barcelona</h1>
+          <h1 id="city"></h1>
           <ul>
             <li>Friday 05:00</li>
-            <li>Clear</li>
+            <li id="description"></li>
             </div>
             <div class="row">
               <div class="col-6">
                 <div class="weather-temperature">
-                <strong>12</strong><span class="units">ºC | <a href="#" id="fahrenheit">ºF</a>
+                <strong id="temperature"></strong><span class="units">ºC | <a href="#" id="fahrenheit">ºF</a>
                 </span>
                 </div>
                 </div>
               <div class="col-6">
                 <ul>
-                  <li>Precipitation</li>
-                  <li>Humidity</li>
-                  <li>Wind</li>
+                  <li>Feels like: <span id="feels-like"></span>ºC</li>
+                  <li>Humidity: <span id="humidity"></span>%</li>
+                  <li>Wind: <span id="wind"></span> km/h</li>
                 </ul>
               </div>
             </div>
