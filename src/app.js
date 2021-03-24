@@ -128,4 +128,19 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
+function handlePosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let units = "metric";
+  let apiKey = "b673a6fd2063be7438876eb814c9f14f";
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&&units=${units}`;
+  axios.get(url).then(displayTemperature);
+}
+function getCurrentInfo(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(handlePosition);
+}
+let currentInfo = document.querySelector("#current-button");
+currentInfo.addEventListener("click", getCurrentInfo);
+
 search("Barcelona");
