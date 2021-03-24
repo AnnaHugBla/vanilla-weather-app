@@ -96,7 +96,13 @@ function search(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
-  search(cityInputElement.value);
+  if (cityInputElement.value < 1) {
+    alert(
+      "You need to enter a city name or tap 📍 to get your location weather info 😊"
+    );
+  } else {
+    search(cityInputElement.value);
+  }
 }
 
 function displayCelsiusTemperature(event) {
