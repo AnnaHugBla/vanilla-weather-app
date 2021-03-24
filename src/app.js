@@ -28,11 +28,13 @@ function formatHours(timestamp) {
 }
 
 function displayTemperature(response) {
+  console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
 
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.name;
+  let countryElement = response.data.sys.country;
+  cityElement.innerHTML = `${response.data.name}, ${countryElement}`;
 
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
