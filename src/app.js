@@ -97,9 +97,7 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   if (cityInputElement.value < 1) {
-    alert(
-      "You need to enter a city name or tap 📍 to get your location weather info 😊"
-    );
+    alert("Enter a city name or tap 📍 to get your location weather info 😊");
   } else {
     search(cityInputElement.value);
   }
