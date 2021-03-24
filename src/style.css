@@ -30,6 +30,20 @@ li:first-letter {
   border: 1px solid #dadde1;
   border-radius: 5px;
 }
+.form-control {
+  display: inline;
+  margin-bottom: 20px;
+  width: 60%;
+}
+.search-button {
+  padding: 5px 10px;
+  margin-left: 5px;
+}
+.current-button {
+  padding: 5px 14px;
+  margin-left: 5px;
+}
+
 .overview {
   margin-bottom: 20px;
 }
