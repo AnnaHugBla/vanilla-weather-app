@@ -44,14 +44,16 @@
               />
             </span>
           </form>
-          <div class="overview">
-            <h1 id="city"></h1>
-            <ul>
-              <li>Last updated: <span id="date"></span></li>
-              <li id="description"></li>
-            </ul>
-          </div>
           <div class="row">
+            <div class="col-6">
+              <div class="overview">
+                <h1 id="city"></h1>
+                <ul>
+                  <li>Last updated: <span id="date"></span></li>
+                  <li id="description"></li>
+                </ul>
+              </div>
+            </div>
             <div class="col-6">
               <span class="clearfix weather-temperature">
                 <img src="" alt="Cloudy" id="icon" class="float-left" /><span
@@ -64,16 +66,31 @@
                 </span>
               </span>
             </div>
-            <div class="col-6">
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <img
+                src="images/sunrise.png"
+                alt="sunrise"
+                class="sunrise-icon"
+              />
+            </div>
+            <div class="col-3">
+              <img src="images/sunset.png" alt="sunrise" class="sunset-icon" />
+            </div>
+            <div class="col-2"></div>
+            <div class="col-4">
               <ul>
                 <li>Feels like: <span id="feels-like"></span>ºC</li>
                 <li>Humidity: <span id="humidity"></span>%</li>
                 <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
             </div>
-            <div class="row weather-forecast" id="forecast"></div>
           </div>
+          <hr class="dividing-line" />
+          <div class="row weather-forecast" id="forecast"></div>
         </div>
+
         <small>
           <a
             href="https://optimistic-jackson-b83e58.netlify.app/"
@@ -82,6 +99,7 @@
           >
           by Anna Huguet
         </small>
+        <footer>Icons from Iconos8</footer>
       </div>
     </div>
     <script src="src/app.js"></script>
