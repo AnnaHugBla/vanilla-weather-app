@@ -4,11 +4,11 @@ function formatDate(timestamp) {
   let days = [
     "Sunday",
     "Monday",
+    "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   let day = days[date.getDay()];
   return `${day} ${formatHours(timestamp)}`;
@@ -50,6 +50,12 @@ function displayTemperature(response) {
 
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  let sunriseElement = document.querySelector("#sunrise-time");
+  sunriseElement.innerHTML = formatHours(response.data.sys.sunrise * 1000);
+
+  let sunsetElement = document.querySelector("#sunset-time");
+  sunsetElement.innerHTML = formatHours(response.data.sys.sunset * 1000);
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
@@ -135,6 +141,7 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 function handlePosition(position) {
+  console.log(position);
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let units = "metric";

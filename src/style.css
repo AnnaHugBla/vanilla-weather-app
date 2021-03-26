@@ -47,9 +47,22 @@ li:first-letter {
 }
 
 .overview {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
+.sunrise-text,
+.sunset-text {
+  padding-left: 8px;
+}
+
+#sunrise-time,
+#sunset-time {
+  padding-left: 11px;
+}
+
+.weather-aspects-row {
+  margin-bottom: 50px;
+}
 .weather-temperature img {
   margin-right: 10px;
   margin-top: -38px;

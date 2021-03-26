@@ -67,10 +67,10 @@
               </span>
             </div>
           </div>
-          <div class="row">
+          <div class="row weather-aspects-row">
             <div class="col-3">
               <ul>
-                <li>Sunrise</li>
+                <li class="sunrise-text">Sunrise</li>
                 <img
                   src="images/sunrise.png"
                   alt="sunrise"
@@ -81,24 +81,25 @@
             </div>
             <div class="col-3">
               <ul>
-                <li>Sunset</li>
+                <li class="sunset-text">Sunset</li>
                 <img
                   src="images/sunset.png"
                   alt="sunrise"
                   class="sunset-icon"
                 />
-                <li id="sunrise-time"></li>
+                <li id="sunset-time"></li>
               </ul>
             </div>
             <div class="col-2"></div>
             <div class="col-4">
               <ul>
-                <li>Feels like: <span id="feels-like"></span>ºC</li>
+                <li>Real feel: <span id="feels-like"></span>ºC</li>
                 <li>Humidity: <span id="humidity"></span>%</li>
                 <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
             </div>
           </div>
+
           <hr class="dividing-line" />
           <div class="row weather-forecast" id="forecast"></div>
         </div>
