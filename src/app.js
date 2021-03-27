@@ -64,6 +64,11 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
+  let weatherDescription = response.data.weather[0].description;
+  if (weatherDescription === "few clouds") {
+    iconElement.setAttribute("src", "images/fewclouds.png");
+  }
+
   celsiusTemperature = response.data.main.temp;
 }
 
@@ -76,7 +81,7 @@ function displayForecast(response) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `<div class="col-2">
                 <h3>${formatHours(forecast.dt * 1000)}</h3>
-                <img
+                <img id="icon"
                   src="http://openweathermap.org/img/wn/${
                     forecast.weather[0].icon
                   }@2x.png"
