@@ -64,8 +64,6 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  console.log(response.data.weather[0].icon);
-
   celsiusTemperature = response.data.main.temp;
 }
 
