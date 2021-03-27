@@ -65,10 +65,25 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   let weatherDescription = response.data.weather[0].description;
-  if (weatherDescription === "few clouds") {
+  if (weatherDescription === "clear sky") {
+    iconElement.setAttribute("src", "images/clearsky.png");
+  } else if (weatherDescription === "few clouds") {
     iconElement.setAttribute("src", "images/fewclouds.png");
+  } else if (weatherDescription === "scattered clouds") {
+    iconElement.setAttribute("src", "images/scattered.png");
+  } else if (weatherDescription === "broken clouds") {
+    iconElement.setAttribute("src", "images/broken.png");
+  } else if (weatherDescription === "shower rain") {
+    iconElement.setAttribute("src", "images/shower.png");
+  } else if (weatherDescription === "rain") {
+    iconElement.setAttribute("src", "images/rain.png");
+  } else if (weatherDescription === "thunderstorm") {
+    iconElement.setAttribute("src", "images/thunderstorm.png");
+  } else if (weatherDescription === "snow") {
+    iconElement.setAttribute("src", "images/snow.png");
+  } else if (weatherDescription === "mist") {
+    iconElement.setAttribute("src", "images/mist.png");
   }
-
   celsiusTemperature = response.data.main.temp;
 }
 
