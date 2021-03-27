@@ -83,9 +83,11 @@ function displayForecast(response) {
                   alt=""
                 />
                 <div class="weather-forecast-temperature">
-                  <strong>${Math.round(
+                  <strong id="max-temp">${Math.round(
                     forecast.main.temp_max
-                  )}º</strong> ${Math.round(forecast.main.temp_min)}º
+                  )}º</strong><id="min-temp">${Math.round(
+      forecast.main.temp_min
+    )}º
                 </div>
               </div>`;
   }
@@ -127,6 +129,12 @@ function displayFahrenheitTemperature(event) {
   fahrenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = fahrenheitTemperature;
+
+  let maxTemp = document.querySelector("#max-temp");
+  maxTemp.innerHTML = fahrenheitTemperature;
+
+  let minTemp = document.querySelector("#min-temp");
+  minTemp.innerHTML = fahrenheitTemperature;
 }
 
 let celsiusTemperature = null;
