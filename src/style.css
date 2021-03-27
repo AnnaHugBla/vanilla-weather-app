@@ -60,11 +60,13 @@ footer {
 .sunrise-text,
 .sunset-text {
   padding-left: 8px;
+  margin-bottom: 10px;
 }
 
 #sunrise-time,
 #sunset-time {
-  padding-left: 11px;
+  padding-left: 12px;
+  margin-top: 10px;
 }
 
 .weather-aspects-row {
