@@ -64,6 +64,8 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
+  console.log(response.data.weather[0].icon);
+
   celsiusTemperature = response.data.main.temp;
 }
 
@@ -83,11 +85,11 @@ function displayForecast(response) {
                   alt=""
                 />
                 <div class="weather-forecast-temperature">
-                  <strong id="max-temp">${Math.round(
+                  <strong><span id="max-temp">${Math.round(
                     forecast.main.temp_max
-                  )}º</strong><id="min-temp">${Math.round(
+                  )}</span>º</strong> <span id="min-temp">${Math.round(
       forecast.main.temp_min
-    )}º
+    )}</span>º
                 </div>
               </div>`;
   }
@@ -120,6 +122,12 @@ function displayCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#temperature");
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  let maxTemp = document.querySelector("#max-temp");
+  maxTemp.innerHTML = Math.round(celsiusTemperature);
+
+  let minTemp = document.querySelector("#min-temp");
+  minTemp.innerHTML = Math.round(celsiusTemperature);
 }
 
 function displayFahrenheitTemperature(event) {
