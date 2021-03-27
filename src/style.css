@@ -21,6 +21,9 @@ h1,
 li:first-letter {
   text-transform: capitalize;
 }
+footer {
+  font-size: 10px;
+}
 
 .container {
   font-family: "Varela Round", sans-serif;
