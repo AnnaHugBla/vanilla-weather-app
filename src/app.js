@@ -26,64 +26,59 @@ function formatHours(timestamp) {
   }
   return `${hours}:${minutes}`;
 }
+function getIcon(weatherDescription) {
+  let iconElement = "";
+  if (weatherDescription === "clear sky") {
+    iconElement = "images/clearsky.png";
+  } else if (weatherDescription === "few clouds") {
+    iconElement = "images/fewclouds.png";
+  } else if (weatherDescription === "scattered clouds") {
+    iconElement = "images/scattered.png";
+  } else if (weatherDescription === "broken clouds") {
+    iconElement = "images/broken.png";
+  } else if (weatherDescription === "shower rain") {
+    iconElement = "images/shower.png";
+  } else if (weatherDescription === "rain") {
+    iconElement = "images/rain.png";
+  } else if (weatherDescription === "thunderstorm") {
+    iconElement = "images/thunderstorm.png";
+  } else if (weatherDescription === "snow") {
+    iconElement = "images/snow.png";
+  } else if (weatherDescription === "mist") {
+    iconElement = "images/mist.png";
+  }
+  return iconElement;
+}
 
 function displayTemperature(response) {
   console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
-
   let cityElement = document.querySelector("#city");
   let countryElement = response.data.sys.country;
   cityElement.innerHTML = `${response.data.name}, ${countryElement}`;
-
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
-
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.main.humidity;
-
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
-
   let feelsLikeElement = document.querySelector("#feels-like");
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
-
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-
   let sunriseElement = document.querySelector("#sunrise-time");
   sunriseElement.innerHTML = formatHours(response.data.sys.sunrise * 1000);
-
   let sunsetElement = document.querySelector("#sunset-time");
   sunsetElement.innerHTML = formatHours(response.data.sys.sunset * 1000);
-
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
   let weatherDescription = response.data.weather[0].description;
-  if (weatherDescription === "clear sky") {
-    iconElement.setAttribute("src", "images/clearsky.png");
-  } else if (weatherDescription === "few clouds") {
-    iconElement.setAttribute("src", "images/fewclouds.png");
-  } else if (weatherDescription === "scattered clouds") {
-    iconElement.setAttribute("src", "images/scattered.png");
-  } else if (weatherDescription === "broken clouds") {
-    iconElement.setAttribute("src", "images/broken.png");
-  } else if (weatherDescription === "shower rain") {
-    iconElement.setAttribute("src", "images/shower.png");
-  } else if (weatherDescription === "rain") {
-    iconElement.setAttribute("src", "images/rain.png");
-  } else if (weatherDescription === "thunderstorm") {
-    iconElement.setAttribute("src", "images/thunderstorm.png");
-  } else if (weatherDescription === "snow") {
-    iconElement.setAttribute("src", "images/snow.png");
-  } else if (weatherDescription === "mist") {
-    iconElement.setAttribute("src", "images/mist.png");
-  }
+  iconElement.setAttribute("src", getIcon(weatherDescription));
   celsiusTemperature = response.data.main.temp;
 }
 
@@ -91,15 +86,12 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
   let forecast = null;
-
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `<div class="col-2">
                 <h3>${formatHours(forecast.dt * 1000)}</h3>
                 <img id="icon"
-                  src="http://openweathermap.org/img/wn/${
-                    forecast.weather[0].icon
-                  }@2x.png"
+                  src="${getIcon(forecast.weather[0].description)}"
                   alt=""
                 />
                 <div class="weather-forecast-temperature">
