@@ -28,23 +28,29 @@ function formatHours(timestamp) {
 }
 function getIcon(iconResponse) {
   let iconElement = "";
-  if (iconResponse === "01d" || "01n") {
+  if (iconResponse === "01d") {
     iconElement = "images/clearsky.png";
-  } else if (iconResponse === "02d" || "02n") {
+  } else if (iconResponse === "01n") {
+    iconElement = "images/clearskyn.png";
+  } else if (iconResponse === "02d") {
     iconElement = "images/fewclouds.png";
-  } else if (iconResponse === "03d" || "03n") {
+  } else if (iconResponse === "02n") {
+    iconElement = "images/fewcloudsn.png";
+  } else if (iconResponse === "03d" || iconResponse === "03n") {
     iconElement = "images/scattered.png";
-  } else if (iconResponse === "04d" || "04n") {
-    iconElement = "images/broken.png";
-  } else if (iconResponse === "09d" || "09n") {
+  } else if (iconResponse === "04d" || iconResponse === "04n") {
+    iconElement = "images/scattered.png";
+  } else if (iconResponse === "09d" || iconResponse === "09n") {
     iconElement = "images/shower.png";
-  } else if (iconResponse === "10d" || "10n") {
+  } else if (iconResponse === "10d") {
     iconElement = "images/rain.png";
-  } else if (iconResponse === "11d" || "11n") {
+  } else if (iconResponse === "10n") {
+    iconElement = "images/rainn.png";
+  } else if (iconResponse === "11d" || iconResponse === "11n") {
     iconElement = "images/thunderstorm.png";
-  } else if (iconResponse === "13d" || "13n") {
+  } else if (iconResponse === "13d" || iconResponse === "13n") {
     iconElement = "images/snow.png";
-  } else if (iconResponse === "50d" || "50n") {
+  } else if (iconResponse === "50d" || iconResponse === "50n") {
     iconElement = "images/mist.png";
   }
   return iconElement;
