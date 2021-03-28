@@ -26,25 +26,25 @@ function formatHours(timestamp) {
   }
   return `${hours}:${minutes}`;
 }
-function getIcon(weatherDescription) {
+function getIcon(iconResponse) {
   let iconElement = "";
-  if (weatherDescription === "clear sky") {
+  if (iconResponse === "01d" || "01n") {
     iconElement = "images/clearsky.png";
-  } else if (weatherDescription === "few clouds") {
+  } else if (iconResponse === "02d" || "02n") {
     iconElement = "images/fewclouds.png";
-  } else if (weatherDescription === "scattered clouds") {
+  } else if (iconResponse === "03d" || "03n") {
     iconElement = "images/scattered.png";
-  } else if (weatherDescription === "broken clouds") {
+  } else if (iconResponse === "04d" || "04n") {
     iconElement = "images/broken.png";
-  } else if (weatherDescription === "shower rain") {
+  } else if (iconResponse === "09d" || "09n") {
     iconElement = "images/shower.png";
-  } else if (weatherDescription === "rain") {
+  } else if (iconResponse === "10d" || "10n") {
     iconElement = "images/rain.png";
-  } else if (weatherDescription === "thunderstorm") {
+  } else if (iconResponse === "11d" || "11n") {
     iconElement = "images/thunderstorm.png";
-  } else if (weatherDescription === "snow") {
+  } else if (iconResponse === "13d" || "13n") {
     iconElement = "images/snow.png";
-  } else if (weatherDescription === "mist") {
+  } else if (iconResponse === "50d" || "50n") {
     iconElement = "images/mist.png";
   }
   return iconElement;
@@ -77,12 +77,13 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  let weatherDescription = response.data.weather[0].description;
-  iconElement.setAttribute("src", getIcon(weatherDescription));
+  let iconResponse = response.data.weather[0].icon;
+  iconElement.setAttribute("src", getIcon(iconResponse));
   celsiusTemperature = response.data.main.temp;
 }
 
 function displayForecast(response) {
+  console.log(response);
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
   let forecast = null;
@@ -91,7 +92,7 @@ function displayForecast(response) {
     forecastElement.innerHTML += `<div class="col-2">
                 <h3>${formatHours(forecast.dt * 1000)}</h3>
                 <img id="icon"
-                  src="${getIcon(forecast.weather[0].description)}"
+                  src="${getIcon(forecast.weather[0].icon)}"
                   alt=""
                 />
                 <div class="weather-forecast-temperature">
