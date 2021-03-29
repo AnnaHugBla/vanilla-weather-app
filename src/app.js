@@ -199,6 +199,8 @@ function handlePosition(position) {
   let apiKey = "b673a6fd2063be7438876eb814c9f14f";
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&&units=${units}`;
   axios.get(url).then(displayTemperature);
+  url = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&&units=${units}`;
+  axios.get(url).then(displayForecast);
 }
 function getCurrentInfo(event) {
   event.preventDefault();
