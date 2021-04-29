@@ -129,6 +129,10 @@ footer {
   margin-top: 10px;
   white-space: nowrap;
 }
+.daily-forecast {
+  margin-top: 30px;
+  text-align: center;
+}
 
 .sunrise-icon,
 .sunset-icon {
