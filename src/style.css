@@ -139,3 +139,14 @@ footer {
   height: 70px;
   width: 70px;
 }
+
+.daily-forecast-date {
+  font-size: 14px;
+}
+.daily-forecast-temperature {
+  font-size: 13px;
+}
+
+.weather-forecast-temperature-max {
+  font-weight: bolder;
+}
